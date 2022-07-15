@@ -153,7 +153,7 @@ nextUrl = "https://kubernetes-io-vnext-staging.netlify.com/"
 githubWebsiteRaw = "raw.githubusercontent.com/kubernetes/website"
 
 # GitHub repository link for editing a page and opening issues.
-github_repo = "https://github.com/kubernetes/website"
+github_repo = "https://github.com/Me-Cloud-R001/AtNotes-0001-kubernetes-documentation-website"
 
 # Searching
 k8s_search = true
