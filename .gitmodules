@@ -5,3 +5,11 @@
 [submodule "api-ref-generator"]
 	path = api-ref-generator
 	url = https://github.com/kubernetes-sigs/reference-docs
+[submodule "azure-aks-kubernetes-masterclass"]
+	path = /home/aatyagi/Documents/ATPractice0002/azure-aks-kubernetes-masterclass
+	url = https://github.com/Me-Cloud-Azure-R002/azure-aks-kubernetes-masterclass.git
+	branch = at-integration-0001-for-refs
+[submodule "azure-quickstart-templates"]
+	path = /home/aatyagi/Documents/ATPractice0002/azure-quickstart-templates/
+	url = https://github.com/Me-Cloud-Azure-R002/azure-quickstart-templates.git
+	branch = at-integration-0001-for-refs
