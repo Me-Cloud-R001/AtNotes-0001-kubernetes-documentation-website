@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../azure-aks-kubernetes-masterclass"
+		},
+		{
+			"path": "../azure-quickstart-templates"
+		}
+	],
+	"settings": {}
+}
