@@ -22,7 +22,7 @@ During a node-pressure eviction, the kubelet sets the `PodPhase` for the
 selected pods to `Failed`. This terminates the pods. 
 
 Node-pressure eviction is not the same as 
-[API-initiated eviction](/docs/reference/generated/kubernetes-api/v1.23/).
+[API-initiated eviction](/docs/concepts/scheduling-eviction/api-eviction/).
 -->
 {{<glossary_tooltip term_id="kubelet" text="kubelet">}}
 监控集群节点的 CPU、内存、磁盘空间和文件系统的 inode 等资源。
@@ -31,7 +31,7 @@ kubelet 可以主动地使节点上一个或者多个 Pod 失效，以回收资�
 
 在节点压力驱逐期间，kubelet 将所选 Pod 的 `PodPhase` 设置为 `Failed`。这将终止 Pod。
 
-节点压力驱逐不同于 [API 发起的驱逐](/docs/reference/generated/kubernetes-api/v1.23/)。
+节点压力驱逐不同于 [API 发起的驱逐](/zh-cn/docs/concepts/scheduling-eviction/api-eviction/)。
 
 <!-- 
 The kubelet does not respect your configured `PodDisruptionBudget` or the pod's
@@ -411,7 +411,7 @@ kubelet 按以下顺序释放磁盘空间：
 If the kubelet's attempts to reclaim node-level resources don't bring the eviction
 signal below the threshold, the kubelet begins to evict end-user pods. 
 
-The kubelet uses the following parameters to determine pod eviction order:
+The kubelet uses the following parameters to determine the pod eviction order:
 
 1. Whether the pod's resource usage exceeds requests
 1. [Pod Priority](/docs/concepts/scheduling-eviction/pod-priority-preemption/)
@@ -598,7 +598,7 @@ kubelet 根据 Pod 的服务质量（QoS）为每个容器设置一个 `oom_scor
 {{<note>}}
 <!-- 
 The kubelet also sets an `oom_score_adj` value of `-997` for containers in Pods that have
-`system-node-critical` {{<glossary_tooltip text="Priority" term_id="pod-priority">}}
+`system-node-critical` {{<glossary_tooltip text="Priority" term_id="pod-priority">}}.
 -->
 kubelet 还将具有 `system-node-critical`
 {{<glossary_tooltip text="优先级" term_id="pod-priority">}}
@@ -659,7 +659,7 @@ Consider the following scenario:
 
 * 节点内存容量：`10Gi`
 * 操作员希望为系统守护进程（内核、`kubelet` 等）保留 10% 的内存容量
-* 操作员希望驱逐内存利用率为 95% 的 Pod，以减少系统 OOM 的概率。
+* 操作员希望在节点内存利用率达到 95% 以上时驱逐 Pod，以减少系统 OOM 的概率。
 
 <!-- 
 For this to work, the kubelet is launched as follows:
@@ -762,7 +762,7 @@ kubelet 将 `active_file` 内存区域视为不可回收。
 kubelet 很容易将其视为资源用量过量并为节点设置内存压力污点，从而触发 Pod 驱逐。
 
 <!-- 
-For more more details, see [https://github.com/kubernetes/kubernetes/issues/43916](https://github.com/kubernetes/kubernetes/issues/43916)
+For more details, see [https://github.com/kubernetes/kubernetes/issues/43916](https://github.com/kubernetes/kubernetes/issues/43916)
 
 You can work around that behavior by setting the memory limit and memory request
 the same for containers likely to perform intensive I/O activity. You will need 
