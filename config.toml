@@ -5,7 +5,7 @@ title = "Kubernetes"
 theme = ["docsy"]
 
 # Language settings
-contentDir = "content/en"
+# contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
@@ -32,6 +32,34 @@ enableGitInfo = true
 # Norwegian ("no") is sometimes but not currently used for testing.
 # Hindi is disabled because it's currently in development.
 disableLanguages = ["hi", "no"]
+
+[module]
+  [[module.mounts]]
+    source = 'content/en'
+    target = 'content'
+  [[module.mounts]]
+    source = 'static'
+    target = 'static'
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'i18n'
+    target = 'i18n'
+  [[module.mounts]]
+    source = 'archetypes'
+    target = 'archetypes'
+  [[module.mounts]]
+    source = '/home/aatyagi/Documents/ATPractice0002/azure-quickstart-templates/quickstarts/microsoft.kubernetes/aks-vmss-systemassigned-identity/'
+    target = 'content/at/001-quickstart/'
+    lang = 'en'
+
 
 [caches]
  [caches.assets]
@@ -153,7 +181,7 @@ nextUrl = "https://kubernetes-io-vnext-staging.netlify.com/"
 githubWebsiteRaw = "raw.githubusercontent.com/kubernetes/website"
 
 # GitHub repository link for editing a page and opening issues.
-github_repo = "https://github.com/kubernetes/website"
+github_repo = "https://github.com/Me-Cloud-R001/AtNotes-0001-kubernetes-documentation-website"
 
 # Searching
 k8s_search = true

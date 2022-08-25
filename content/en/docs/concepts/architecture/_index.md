@@ -3,8 +3,7 @@ title: Kubernetes Cluster Architecture
 weight: 30
 description: |
   The architectural concepts behind Kubernetes.
-lastmod: 2022-07-12T16:19:33.620Z
+lastmod: 2022-07-15T17:46:13.070Z
 ---
 # Kubernetes Cluster Architecture
 
-{{< childpages >}}

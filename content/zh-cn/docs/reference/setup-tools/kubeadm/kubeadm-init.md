@@ -2,6 +2,7 @@
 title: kubeadm init
 content_type: concept
 weight: 20
+lastmod: 2022-07-15T18:08:09.639Z
 ---
 
 <!--
@@ -598,10 +599,9 @@ value to the kubelet.
 值传递给 kubelet。
 
 <!--
-Be aware that overriding the hostname can
-[interfere with cloud providers](https://github.com/kubernetes/website/pull/8873).
+Be aware that overriding the hostname can [interfere with cloud providers](https://github.com/Me-Cloud-R001/AtNotes-0001-kubernetes-documentation-website/pull/8873).
 -->
-要注意，重载主机名可能会[与云驱动发生冲突](https://github.com/kubernetes/website/pull/8873)。
+要注意，重载主机名可能会[与云驱动发生冲突](https://github.com/Me-Cloud-R001/AtNotes-0001-kubernetes-documentation-website/pull/8873)。
 
 <!--
 ### Automating kubeadm
