@@ -424,3 +424,14 @@ git submodule add --branch at-integration-0001-for-refs --name azure-quickstart-
 
 git submodule update --init --recursive --depth 1
 ```
+
+### Issues
+
+#### Your commits on your 'develop' branch do not match the commits on your 'origin' branch
+
+This happens when (a) you committed something on that branch earlier, or (b) the history on the remote server changed in a non-standard way (this shouldn't normally happen but repository owners sometimes don't play by the rules).
+For the following I'm assuming you're on foo and the upstream branch is origin/foo:
+
+* Use git log ..origin/foo to see what commits are new on the remote side.
+* Use git log origin/foo.. to see what commits exist on your side that don't exist on the remote side (this will show you any commits that are preventing fast-forwarding).
+* If you conclude that those commits are not needed or already present in a different form on the remote side, git reset --hard origin/foo to force your branch to become equal to the remote one (this will destroy all uncommitted changes and any commits not contained in remote/foo will become unreachable).
